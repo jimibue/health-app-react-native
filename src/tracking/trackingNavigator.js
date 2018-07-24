@@ -17,8 +17,15 @@ export default createMaterialTopTabNavigator(
     },
     {
         initialRouteName: 'DailyTracker',
-        activeTintColor: '#f0edf6',
-        inactiveTintColor: '#3e2465',
-        barStyle: { backgroundColor: '#694fad' },
+        tabBarOptions: {
+            labelStyle: {
+              fontSize: 12,
+            },
+
+            style: {
+              backgroundColor: '#303e48',
+              backgroundColor: '#e45f56',
+            },
+          }
       }
 )
