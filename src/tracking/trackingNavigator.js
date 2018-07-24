@@ -1,9 +1,9 @@
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import DailyTrackerScreen from './daily/DailyTrackerScreen';
 import MonthlyTrackerScreen from './monthly/MonthlyTrackerScreen';
 
-export default createMaterialTopTabNavigator(
+export default createBottomTabNavigator(
     {
         DailyTracker:{ screen: DailyTrackerScreen,
         navigationOptions: {
@@ -24,7 +24,7 @@ export default createMaterialTopTabNavigator(
 
             style: {
               backgroundColor: '#303e48',
-              backgroundColor: '#e45f56',
+              //backgroundColor: '#e45f56',
             },
           }
       }

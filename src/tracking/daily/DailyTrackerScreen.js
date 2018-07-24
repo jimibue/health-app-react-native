@@ -7,12 +7,13 @@ const styles = StyleSheet.create({
 
   },
   navigate:{
-    backgroundColor:"#f3f3f3",
+    backgroundColor:"white",
     flexDirection: 'row',
     justifyContent:'center',
      alignContent: 'center',
+     alignItems: 'center',
 
-    padding: 10,
+    padding: 30,
    
   },
   navigateContainer:{
@@ -87,6 +88,13 @@ export default class DailyTrackerScreen extends Component {
     }
   }
 
+  getNextItem = () =>{
+    return 'next'
+  }
+  getPrevItem = () =>{
+    return 'previous'
+  }
+
   render() {
     let { data, currentDateIndex,isListView } = this.state
     let currentDate = data[currentDateIndex]
@@ -94,7 +102,7 @@ export default class DailyTrackerScreen extends Component {
     let currentDateItem = currentDateItemData[currentDate.currentItemIndex]
     return (
       <View style={styles.container}>
-          <View  style={styles.navigate}>
+              <View  style={styles.navigate}>
           <Text>icon</Text>
           <View  style={styles.navigateContainer}>
              <TouchableOpacity onPress={ ()=> {this.setState({ currentDateIndex: --currentDateIndex }) }}>
@@ -109,8 +117,15 @@ export default class DailyTrackerScreen extends Component {
             </View>
             <Text onPress={() => {this.setState( {isListView: !isListView} )}}>icon</Text>
         </View>
-        
-        {  !isListView && <DailyItem item={currentDateItem}/> }
+
+        {  !isListView && 
+          <DailyItem 
+            item={currentDateItem} 
+            nextItem={this.getNextItem()}
+            prevItem={this.getPrevItem()}
+            navigatePrevItem={this.navigatePrevItem}
+            navigatePrevItem={this.navigateNextItem}
+            /> }
         {  isListView && 
           <FlatList
           data={currentDateItemData}
@@ -123,7 +138,8 @@ export default class DailyTrackerScreen extends Component {
           />
         }
         
-        <Text>{currentDateItemData.length}</Text>
+
+        
 
       </View>
     );
