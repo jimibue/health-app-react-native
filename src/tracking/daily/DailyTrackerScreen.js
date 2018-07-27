@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text,TouchableOpacity, StyleSheet,FlatList } from 'react-native';
 
+import DailyItem from './DailyItem';
+import { connect } from 'react-redux';
+
+
+
+
 const styles = StyleSheet.create({
   container:{
     flex:1,
@@ -40,9 +46,10 @@ const styles = StyleSheet.create({
   }
 })
 
-import DailyItem from './DailyItem';
 
-export default class DailyTrackerScreen extends Component {
+
+
+class DailyTrackerScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -80,6 +87,11 @@ export default class DailyTrackerScreen extends Component {
     ]
     };
   }
+
+  componentDidMount = () => {
+  }
+
+  
   rendorBody = () =>{
     if(!this.state.isListView){
       return <DailyItem item={currentDateItem}/>
@@ -131,7 +143,7 @@ export default class DailyTrackerScreen extends Component {
           data={currentDateItemData}
           renderItem={({item}) => 
           <View style={styles.list}>
-            <Text>{item.type}</Text>
+            <Text>{item.title}</Text>
             <Text>{item.score}</Text>
             </View>  
             }
@@ -145,3 +157,14 @@ export default class DailyTrackerScreen extends Component {
     );
   }
 }
+const mapStateToProps = state =>{
+    
+    return {
+        practices: state.daily.practices,
+        
+        formatedData: state.daily.formatedData,
+        currentDateIndex:state.daily.currentDateIndex,
+    }
+}
+export default connect(mapStateToProps)(DailyTrackerScreen)
+//export default DailyTrackerScreen

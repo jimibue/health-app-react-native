@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jamesyeates/Desktop/react-native/health-app-react-native/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
-  /Users/jamesyeates/Desktop/react-native/health-app-react-native/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
+  /Users/jamesyeates/Desktop/health-beta/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
+  /Users/jamesyeates/Desktop/health-beta/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
