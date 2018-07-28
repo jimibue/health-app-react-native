@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { View, Text,TouchableOpacity, StyleSheet,FlatList } from 'react-native';
 
 import DailyItem from './DailyItem';
+import PracticeListViewItem from './PracticeListViewItem';
 import { connect } from 'react-redux';
+
+import { getNextPractice } from '../actions/daily';
+import { getPrevPractice } from '../actions/daily';
 
 
 
@@ -14,12 +18,14 @@ const styles = StyleSheet.create({
   },
   navigate:{
     backgroundColor:"white",
+    backgroundColor: '#303e48',
+    backgroundColor: '#e45f56',
     flexDirection: 'row',
     justifyContent:'center',
      alignContent: 'center',
      alignItems: 'center',
 
-    padding: 30,
+    padding: 15,
    
   },
   navigateContainer:{
@@ -55,40 +61,11 @@ class DailyTrackerScreen extends Component {
     this.state = {
       isListView:false,
       currentDateIndex:1,
-      data:[
-      {
-        currentItemIndex:0,
-        date:'June 1',
-        dummyData: [
-          { key:1, id:1, score:4, type:'cardio'},
-          { key:2, id:2, score:3, type:'strength training'},
-          { key:3, id:3, score:2, type:'flexibilty training'},
-        ]
-      },
-      {
-        currentItemIndex:0,
-        date:'June 2',
-        dummyData: [
-          { key:1, id:1, score:0, type:'cardio'},
-          { key:2, id:2, score:4, type:'strength training'},
-          { key:3, id:3, score:5, type:'flexibilty training'},
-        ]
-      },
-      {
-        currentItemIndex:0,
-        date:'June 3',
-        dummyData: [
-          { key:1, id:1, score:1, type:'cardio'},
-          { key:2, id:2, score:2, type:'strength training'},
-          { key:3, id:3, score:0, type:'flexibilty training'},
-        ]
-      }
-      
-    ]
     };
   }
 
   componentDidMount = () => {
+    console.log('mounted')
   }
 
   
@@ -101,21 +78,25 @@ class DailyTrackerScreen extends Component {
   }
 
   getNextItem = () =>{
-    return 'next'
+    this.props.loadNextPractice()
   }
   getPrevItem = () =>{
-    return 'previous'
+    this.props.loadPrevPractice()
+  }
+  getNextText = () => {
+    return this.props.nextPractice.title == 'none' ?  '' : this.props.nextPractice.title 
   }
 
   render() {
-    let { data, currentDateIndex,isListView } = this.state
-    let currentDate = data[currentDateIndex]
-    let currentDateItemData = currentDate.dummyData
-    let currentDateItem = currentDateItemData[currentDate.currentItemIndex]
+    console.log(this.props.nextPractice)
+    const { currentPractice, nextPractice, prevPractice }  = this.props
     return (
-      <View style={styles.container}>
-              <View  style={styles.navigate}>
-          <Text>icon</Text>
+    <View style={styles.container}>
+     <View  style={styles.navigate}>
+     <Text onPress={() => {this.setState( {isListView: !this.state.isListView} )}}>icon</Text>
+      </View> 
+        {/* <View  style={styles.navigate}>
+          <Text>icons</Text>
           <View  style={styles.navigateContainer}>
              <TouchableOpacity onPress={ ()=> {this.setState({ currentDateIndex: --currentDateIndex }) }}>
             { currentDateIndex != 0 && <Text style={[styles.navigateText,styles.width]}> {'<'} </Text>}
@@ -126,45 +107,55 @@ class DailyTrackerScreen extends Component {
             { currentDateIndex != data.length-1 && <Text style={[styles.navigateText,styles.width]}> > </Text>}
             { currentDateIndex  == data.length-1 && <Text style={[styles.navigateText,styles.width]}> {' '} </Text>}
             </TouchableOpacity>
-            </View>
-            <Text onPress={() => {this.setState( {isListView: !isListView} )}}>icon</Text>
-        </View>
+          </View>
+          
+        </View>*/}
 
-        {  !isListView && 
-          <DailyItem 
-            item={currentDateItem} 
-            nextItem={this.getNextItem()}
-            prevItem={this.getPrevItem()}
-            navigatePrevItem={this.navigatePrevItem}
-            navigatePrevItem={this.navigateNextItem}
-            /> }
-        {  isListView && 
+        {  !this.state.isListView && 
+     <DailyItem 
+          practice={currentPractice} 
+            nextItem={this.getNextText()}
+            prevItem={prevPractice.title == 'none' ?  '' : prevPractice.title }
+            navigatePrevItem={this.getPrevItem}
+            navigateNextItem={this.getNextItem}
+            />}
+        {  this.state.isListView && 
           <FlatList
-          data={currentDateItemData}
+          data={this.props.practices}
           renderItem={({item}) => 
-          <View style={styles.list}>
-            <Text>{item.title}</Text>
-            <Text>{item.score}</Text>
-            </View>  
+          <PracticeListViewItem
+              {...item}
+            
+            />
+          // <View style={styles.list}>
+          //   <Text>{item.title}</Text>
+          //   <Text>{item.score}</Text>
+          // </View>  
             }
           />
-        }
-        
-
-        
-
+        } 
       </View>
     );
   }
 }
+mapDispatchToProp = dispatch => {
+  return{
+    loadNextPractice: () =>dispatch(getNextPractice()),
+    loadPrevPractice: () =>dispatch(getPrevPractice())
+  }
+}
 const mapStateToProps = state =>{
-    
+    const {currentPractice, practices, formatedData, currentDateIndex, todaysData, prevPractice, nextPractice } = state.daily
     return {
-        practices: state.daily.practices,
-        
-        formatedData: state.daily.formatedData,
-        currentDateIndex:state.daily.currentDateIndex,
+        practices,
+        formatedData,
+        currentDateIndex,
+        todaysData,
+        currentPractice,
+        prevPractice,
+        nextPractice
+
     }
 }
-export default connect(mapStateToProps)(DailyTrackerScreen)
+export default connect(mapStateToProps, mapDispatchToProp )(DailyTrackerScreen)
 //export default DailyTrackerScreen

@@ -1,8 +1,7 @@
-//import { AppRegistry } from 'react-native';
 import React from 'react'
 import App from './App';
 
-// AppRegistry.registerComponent('tpdemo2', () => App);
+import thunk from 'redux-thunk';
 
 import { AppRegistry } from 'react-native'
 
@@ -17,6 +16,7 @@ import { Provider } from 'react-redux'
 import configureStore from './src/configureStore'
 
 const store = configureStore()
+//const store = createStore(combineReducers ,applyMiddleware(thunk));
 
 console.disableYellowBox = true; 
 
@@ -27,4 +27,5 @@ const ReduxApp = () => (
     </Provider>
   )
 
-AppRegistry.registerComponent('healthbeta', () => App);
+AppRegistry.registerComponent('healthbeta', () => ReduxApp );
+

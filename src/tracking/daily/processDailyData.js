@@ -35,13 +35,14 @@ export function getAllDays (length) {
     return data
 
 }
-export const getDayData = (dayIndex, array) => {
-   return test.map( practice =>{
+export function getDayData (dayIndex, array){
+   return array.map( practice =>{
         return{
             key: practice.key,
             id: practice.id,
             date: 'June'+ dayIndex,
-            score: practice.data[dayIndex],
+            score: practice.data.charAt(dayIndex -1),
+            scoree:1,
             title: practice.title,
             description: practice.description
         }

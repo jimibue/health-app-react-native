@@ -887,28 +887,6 @@
             ]
         },
         {
-            "outputFile": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/values-fa/values-fa.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "280,390,500,626,729,840,928,1031,1146,1227,1339,1442,1540,1650,1753,1862,1987,2088",
-                        "endColumns": "109,109,125,102,110,87,102,114,80,111,102,97,109,102,108,124,100,100",
-                        "endOffsets": "385,495,621,724,835,923,1026,1141,1222,1334,1437,1535,1645,1748,1857,1982,2083,2184"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,165,275,401,504,615,703,806,921,1002,1114,1217,1315,1425,1528,1637,1762,1863",
-                        "endColumns": "109,109,125,102,110,87,102,114,80,111,102,97,109,102,108,124,100,100",
-                        "endOffsets": "160,270,396,499,610,698,801,916,997,1109,1212,1310,1420,1523,1632,1757,1858,1959"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/values-de_values-de.arsc.flat",
             "map": [
                 {
@@ -926,6 +904,28 @@
                         "startOffsets": "55,160,268,391,489,601,687,792,907,989,1100,1203,1302,1413,1515,1622,1744,1846",
                         "endColumns": "104,107,122,97,111,85,104,114,81,110,102,98,110,101,106,121,101,100",
                         "endOffsets": "155,263,386,484,596,682,787,902,984,1095,1198,1297,1408,1510,1617,1739,1841,1942"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/values-fa/values-fa.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "280,390,500,626,729,840,928,1031,1146,1227,1339,1442,1540,1650,1753,1862,1987,2088",
+                        "endColumns": "109,109,125,102,110,87,102,114,80,111,102,97,109,102,108,124,100,100",
+                        "endOffsets": "385,495,621,724,835,923,1026,1141,1222,1334,1437,1535,1645,1748,1857,1982,2083,2184"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,165,275,401,504,615,703,806,921,1002,1114,1217,1315,1425,1528,1637,1762,1863",
+                        "endColumns": "109,109,125,102,110,87,102,114,80,111,102,97,109,102,108,124,100,100",
+                        "endOffsets": "160,270,396,499,610,698,801,916,997,1109,1212,1310,1420,1523,1632,1757,1858,1959"
                     }
                 }
             ]

@@ -23,21 +23,14 @@ const styles=StyleSheet.create({
     }
 })
 
-export default class DailyItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        nextItem:props.nextItem,
-        prevItem:props.prevItem,
-    };
-  }
+class DailyItem extends Component {
 
   render() {
-    const  { nextItem, prevItem, navigatePrevItem, navigateNextItem } = this.state
+    const { practice, navigateNextItem, navigatePrevItem,nextItem, prevItem  } = this.props
     return (
       <View style={styles.container}>
-        <Text> {this.props.item.type}</Text>
-        <ButtonGroup />
+        <Text> {practice.title} - {practice.score} </Text>
+        <ButtonGroup selectedScore={practice.score} />
         <View style={styles.bottomNav}>
             <TouchableOpacity onPress={navigatePrevItem}>
                 <Text style={styles.link}>{prevItem}</Text>
@@ -51,3 +44,5 @@ export default class DailyItem extends Component {
     );
   }
 }
+
+export default DailyItem

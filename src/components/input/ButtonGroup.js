@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Button from './Button';
 
+import { scoreChanged,getNextPractice } from '../../tracking/actions/daily'
+
+import { connect } from 'react-redux'
+
 const styles = StyleSheet.create({
   container:{
     flexDirection: 'row',
   }
 })
 
-export default class ButtonGroup extends Component {
+class ButtonGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,12 +27,21 @@ export default class ButtonGroup extends Component {
     };
   }
 
-  renderButtons = () =>{
-      let tempButtons = this.state.buttons.map( function( button ){
-          return <Button {...button} />
+  renderButtons = () => {
+      const scoreIndex = parseInt(this.props.score)
+      let tempButtons = this.state.buttons.map( ( button,i ) => {
+        if(scoreIndex == i){
+          return <Button key={`button${i}`} value={button.value} isSelected={true}/>
+        }
+        return <Button key={`button${i}`}  {...button} handlePress={()=>this.handlePress(button.value)}/>
       })
 
       return tempButtons
+  }
+
+  handlePress = (value) =>{
+    this.props.handleScoreChange(value)
+    this.props.getNextPractice()
   }
 
   render() {
@@ -39,3 +52,23 @@ export default class ButtonGroup extends Component {
     );
   }
 }
+
+const mapStateToProps = state =>{
+  return {
+    score: state.daily.currentPractice.score
+  }
+}
+
+// const mapDispatchToProps = dispatch =>{
+//   return {
+//     onLoadData: () => dispatch(getEvents())
+//   }
+// }
+
+const mapDispatchToProps = dispatch =>{
+  return{
+      handleScoreChange: (value) => dispatch(scoreChanged(value)),
+      getNextPractice: (value) => dispatch(getNextPractice())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonGroup)
