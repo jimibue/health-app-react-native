@@ -49,6 +49,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:'center',
     alignContent: 'center',
+  },
+  headerText:{
+    color:'white',
+    fontSize:24,
+    fontWeight: '600',
   }
 })
 
@@ -65,7 +70,7 @@ class DailyTrackerScreen extends Component {
   }
 
   componentDidMount = () => {
-    console.log('mounted')
+    console.log('Trakcing mounted')
   }
 
   
@@ -88,52 +93,21 @@ class DailyTrackerScreen extends Component {
   }
 
   render() {
-    console.log(this.props.nextPractice)
+    console.log('DAily rendered')
     const { currentPractice, nextPractice, prevPractice }  = this.props
     return (
     <View style={styles.container}>
      <View  style={styles.navigate}>
-     <Text onPress={() => {this.setState( {isListView: !this.state.isListView} )}}>icon</Text>
+     <Text style={styles.headerText}> TRACKING </Text>
       </View> 
-        {/* <View  style={styles.navigate}>
-          <Text>icons</Text>
-          <View  style={styles.navigateContainer}>
-             <TouchableOpacity onPress={ ()=> {this.setState({ currentDateIndex: --currentDateIndex }) }}>
-            { currentDateIndex != 0 && <Text style={[styles.navigateText,styles.width]}> {'<'} </Text>}
-            { currentDateIndex == 0 && <Text style={[styles.navigateText,styles.width]}> {' '} </Text>}
-            </TouchableOpacity>
-            <Text style={styles.navigateText}> {currentDate.date}</Text>
-            <TouchableOpacity onPress={ ()=> {this.setState({ currentDateIndex: ++currentDateIndex }) }}>
-            { currentDateIndex != data.length-1 && <Text style={[styles.navigateText,styles.width]}> > </Text>}
-            { currentDateIndex  == data.length-1 && <Text style={[styles.navigateText,styles.width]}> {' '} </Text>}
-            </TouchableOpacity>
-          </View>
-          
-        </View>*/}
 
-        {  !this.state.isListView && 
      <DailyItem 
           practice={currentPractice} 
             nextItem={this.getNextText()}
             prevItem={prevPractice.title == 'none' ?  '' : prevPractice.title }
             navigatePrevItem={this.getPrevItem}
             navigateNextItem={this.getNextItem}
-            />}
-        {  this.state.isListView && 
-          <FlatList
-          data={this.props.practices}
-          renderItem={({item}) => 
-          <PracticeListViewItem
-              {...item}
-            
             />
-          // <View style={styles.list}>
-          //   <Text>{item.title}</Text>
-          //   <Text>{item.score}</Text>
-          // </View>  
-            }
-          />
-        } 
       </View>
     );
   }
@@ -145,9 +119,8 @@ mapDispatchToProp = dispatch => {
   }
 }
 const mapStateToProps = state =>{
-    const {currentPractice, practices, formatedData, currentDateIndex, todaysData, prevPractice, nextPractice } = state.daily
+    const {currentPractice, formatedData, currentDateIndex, todaysData, prevPractice, nextPractice } = state.daily
     return {
-        practices,
         formatedData,
         currentDateIndex,
         todaysData,

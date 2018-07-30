@@ -20,6 +20,11 @@ const styles=StyleSheet.create({
     },
     link:{
         color:'#999'
+    },
+    title:{
+        fontSize: 40,
+        fontWeight: '700',
+        padding: 40,
     }
 })
 
@@ -29,7 +34,7 @@ class DailyItem extends Component {
     const { practice, navigateNextItem, navigatePrevItem,nextItem, prevItem  } = this.props
     return (
       <View style={styles.container}>
-        <Text> {practice.title} - {practice.score} </Text>
+        <Text style={styles.title}> {practice.title}</Text>
         <ButtonGroup selectedScore={practice.score} />
         <View style={styles.bottomNav}>
             <TouchableOpacity onPress={navigatePrevItem}>

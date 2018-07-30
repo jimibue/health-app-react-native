@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jul 28 10:32:16 MDT 2018
+#Sat Jul 28 17:05:47 MDT 2018
 17.baseType=DIRECTORY
 4.path=lib/x86/libfolly_json.so
 25.base=/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/transforms/mergeJniLibs/debug/0

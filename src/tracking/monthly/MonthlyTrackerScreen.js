@@ -1,64 +1,123 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,TouchableOpacity, StyleSheet,FlatList } from 'react-native';
 
-import { BarChart, Grid,LineChart } from 'react-native-svg-charts'
-import { Defs, LinearGradient, Stop } from 'react-native-svg'
 
-export default class MonthlyTrackerScreen extends Component {
+import PracticeListViewItem from '../daily/PracticeListViewItem';
+import { connect } from 'react-redux';
+
+
+
+
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+
+  },
+  navigate:{
+    backgroundColor:"white",
+    backgroundColor: '#303e48',
+    backgroundColor: '#e45f56',
+    flexDirection: 'row',
+    justifyContent:'center',
+     alignContent: 'center',
+     alignItems: 'center',
+
+    padding: 15,
+   
+  },
+  navigateContainer:{
+    width:280,
+    flexDirection: 'row',
+    justifyContent:'center',
+    alignContent: 'center',
+  
+  },
+  navigateText:{
+    color:'#444',
+    paddingRight: 10,
+    fontSize:24
+   
+  },
+  width:{
+    width:50,
+    // backgroundColor:"red",
+  },
+  list:{
+    flexDirection: 'row',
+    justifyContent:'center',
+    alignContent: 'center',
+  }
+})
+
+
+
+
+class MonthlyTrackerScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isListView:false,
+      currentDateIndex:1,
     };
   }
 
-  render() {
-        const data = [ 50, 10, 40, 95, 85 ]
-        const data1 = [ 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80 ]
+  componentDidMount = () => {
+    console.log('mounted')
+  }
 
-        const Gradient = () => (
-            <Defs key={'gradient'}>
-                <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
-                    <Stop offset={'0%'} stopColor={'rgb(134, 65, 244)'}/>
-                    <Stop offset={'100%'} stopColor={'rgb(66, 194, 244)'}/>
-                </LinearGradient>
-            </Defs>
-        )
-
-        return (
-          <View style={{flex:1}}>
-            <View style={{ flexDirection: 'row', height: 80, width:80, paddingVertical: 16 }}>
-                <BarChart
-                    style={{ flex: 1, marginLeft: 8 , height: 50, width:50 }}
-                    data={data}
-                    horizontal={false}
-
-                    showGrid={false}
-                    numberOfTicks={0}
-                    svg={{ fill: 'rgba(134, 65, 244, 0.8)', }}
-                    contentInset={{ top: 10, bottom: 10 }}
-                    ticks={0}
-                    gridMin={0}
-                >
-                    <Grid direction={Grid.Direction.VERTICAL}/>
-                </BarChart>
-                </View>
-                <LineChart
-                style={ { height: 50, width:50 } }
-                data={ data }
-                showGrid={false}
-                numberOfTicks={0}
-                ticks={0}
-                contentInset={ { top: 10, bottom: 10 } }
-                svg={{
-                    strokeWidth: 3,
-                    stroke: 'url(#gradient)',
-                }}
-            >
-                <Grid/>
-                <Gradient/>
-            </LineChart>
-            </View>
   
-    )
+  rendorBody = () =>{
+    if(!this.state.isListView){
+      return <DailyItem item={currentDateItem}/>
+    }else{
+      return <Text>yo</Text>
+    }
+  }
+
+  getNextItem = () =>{
+    this.props.loadNextPractice()
+  }
+  getPrevItem = () =>{
+    this.props.loadPrevPractice()
+  }
+  getNextText = () => {
+    return this.props.nextPractice.title == 'none' ?  '' : this.props.nextPractice.title 
+  }
+
+  render() {
+    console.log(this.props.nextPractice)
+    const { currentPractice, nextPractice, prevPractice }  = this.props
+    return (
+    <View style={styles.container}>
+     <View  style={styles.navigate}>
+     <Text> INSIGHTS </Text>
+      </View> 
+          <FlatList
+          data={this.props.practices}
+          renderItem={({item}) => 
+          <PracticeListViewItem
+              {...item}
+            />
+            }
+          />
+      </View>
+    );
   }
 }
+
+const mapStateToProps = state =>{
+    const {currentPractice, practices, formatedData, currentDateIndex, todaysData, prevPractice, nextPractice } = state.daily
+    return {
+        practices,
+        formatedData,
+        currentDateIndex,
+        todaysData,
+        currentPractice,
+        prevPractice,
+        nextPractice
+
+    }
+}
+export default connect(mapStateToProps )(MonthlyTrackerScreen)
+//export default DailyTrackerScreen

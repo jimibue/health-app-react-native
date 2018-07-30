@@ -4,16 +4,16 @@
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-mdpi/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-mdpi_abc_ic_ab_back_mtrl_am_alpha.png.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-mdpi/abc_ic_ab_back_mtrl_am_alpha.png"
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-ldrtl-xxxhdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-xxxhdpi/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-ldrtl-xxxhdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-mdpi_abc_ic_ab_back_mtrl_am_alpha.png.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-mdpi/abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
@@ -116,24 +116,24 @@
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/anim/abc_fade_out.xml"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-xxhdpi/abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/anim_catalyst_push_up_out.xml.flat",
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/5cbcaf7355a6202579a109396dcff92e/res/anim/catalyst_push_up_out.xml"
+    },
+    {
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-xxhdpi/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/layout_abc_screen_content_include.xml.flat",
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-hdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_abc_list_focused_holo.9.png.flat",
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-xhdpi/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-hdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/color-v11_abc_background_cache_hint_selector_material_dark.xml.flat",
@@ -164,12 +164,12 @@
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-mdpi/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/layout_select_dialog_item_material.xml.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/layout/select_dialog_item_material.xml"
-    },
-    {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-xxhdpi/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/layout_select_dialog_item_material.xml.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_btn_rating_star_on_mtrl_alpha.png.flat",
@@ -240,12 +240,12 @@
         "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable-hdpi/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_light.xml.flat",
-        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable/abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnavigation_src_views_assets_backiconmask.png.flat",
         "source": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backiconmask.png"
+    },
+    {
+        "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "/Users/jamesyeates/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/f71ab6b190bcb0b1098511f56cf73986/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
         "merged": "/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/res/merged/debug/anim_catalyst_slide_down.xml.flat",

@@ -5,3 +5,5 @@ export default createStackNavigator({
     Insights: InsightsScreen
 })
 
+//export default InsightsScreen
+

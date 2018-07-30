@@ -4,41 +4,56 @@ const rawData =[
         title: "First",
         description:' 0 is not working 5 is working it',
         createdDay:0,
-        data:'15243'
+        data:'23243234234354321524343243203432'
 
     },
     {
         title: "Cardio",
         description:' 0 is not working 5 is working it',
         createdDay:0,
-        data:'15243'
+        //data:'0000333200003455550000043203452'
+        data:'2221331441333144150022333444044'
 
     },
     {
-       title: "Strength Traning",
+       title: "Strength",
        description:' 0 is not working -1 is working it!!',
        createdDay:0,
-       data:'50321'
+      // data:'0000333200003455550000043203452'
+       data:'2222220333333044444405555550444'
    },
    {
-    title: "Cold Therapy",
+    title: "Stretch",
     description:' 0 is not working -1 is working it!!',
     createdDay:0,
-    data:'0234X'
+    data:'503211341110234202345432220050501'
+},
+   {
+    title: "Cold",
+    description:' 0 is not working -1 is working it!!',
+    createdDay:0,
+    data:'02345431000505015032113411102342'
 },
 
    {
-    title: "Groundhog Day",
+    title: "Groundhog",
     description:' 0 is not working -1 is working it!!',
     createdDay:0,
-    data:'40234'
+    data:'40234112435100444023411243510044'
+},
+
+{
+    title: "Booze",
+    description:' 0 is not working -1 is working it!!',
+    createdDay:0,
+    data:'000001120000044000001120000055'
 },
 
 {
     title: "Last",
     description:' 0 is not working -1 is working it!!',
     createdDay:0,
-    data:'40234'
+    data:'43433434232234534023444431123433'
 }
 
 ]
@@ -55,6 +70,7 @@ const todaysData = getDayData(currentDayIndex + 1, rawData)
 const currentPracticeIndex = 0
 const intialState = {
  practices:rawData,
+ Ipractices:rawData,
  currentDayIndex,
  currentPracticeIndex: currentPracticeIndex, 
  formatedData: getAllDays(8),

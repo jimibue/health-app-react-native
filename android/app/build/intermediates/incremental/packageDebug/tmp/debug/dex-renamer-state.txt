@@ -1,4 +1,4 @@
-#Sat Jul 28 10:32:16 MDT 2018
+#Sat Jul 28 17:05:47 MDT 2018
 base.0=/Users/jamesyeates/Desktop/react-native/health-app-react-native/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

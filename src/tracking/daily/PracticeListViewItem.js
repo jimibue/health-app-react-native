@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 20,
         margin: 5,
-        backgroundColor: 'rgba(240,241,256, 0.5)'
+        backgroundColor: 'rgba(240,241,256, 0.5)',
+        elevation:2
     },
     title :{
         fontSize: 24,
@@ -44,11 +45,11 @@ export default class PracticeListViewItem extends Component {
         <View style={styles.row}>
             <Text  style={styles.title}> {this.props.title}</Text>
             <Text> {this.props.descpition}</Text>
-            <BasicBar  barColor={'#dddddd'}/>
+            {/* <BasicBar  barColor={'#dddddd'}/> */}
         </View>
         <View style={styles.row}>
-             <BasicLine />
-            <BasicBar  barColor={'#e45f56'}/>
+            <BasicLine data={this.props.data}  />
+            <BasicBar   data={this.props.data} barColor={'#e45f56'}/> 
         </View>
 
       </View>
