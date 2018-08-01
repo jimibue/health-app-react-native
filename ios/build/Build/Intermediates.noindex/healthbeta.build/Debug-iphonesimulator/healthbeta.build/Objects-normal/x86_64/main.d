@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jamesyeates/Desktop/health-beta/ios/healthbeta/main.m \
-  /Users/jamesyeates/Desktop/health-beta/ios/healthbeta/AppDelegate.h
+  /Users/jamesyeates/Desktop/react-native/health-app-react-native/ios/healthbeta/main.m \
+  /Users/jamesyeates/Desktop/react-native/health-app-react-native/ios/healthbeta/AppDelegate.h

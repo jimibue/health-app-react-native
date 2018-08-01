@@ -6,7 +6,7 @@ import PracticeListViewItem from './PracticeListViewItem';
 import { connect } from 'react-redux';
 
 import { getNextPractice } from '../actions/daily';
-import { getPrevPractice } from '../actions/daily';
+import { getPrevPractice,thunkDemo, thunkGetDemo } from '../actions/daily';
 
 
 
@@ -71,6 +71,8 @@ class DailyTrackerScreen extends Component {
 
   componentDidMount = () => {
     console.log('Trakcing mounted')
+    //this.props.thunkDemo();
+    this.props.thunkGetDemo()
   }
 
   
@@ -115,7 +117,9 @@ class DailyTrackerScreen extends Component {
 mapDispatchToProp = dispatch => {
   return{
     loadNextPractice: () =>dispatch(getNextPractice()),
-    loadPrevPractice: () =>dispatch(getPrevPractice())
+    loadPrevPractice: () =>dispatch(getPrevPractice()),
+    thunkDemo: ()=>dispatch(thunkDemo()),
+    thunkGetDemo: ()=>dispatch(thunkGetDemo())
   }
 }
 const mapStateToProps = state =>{
