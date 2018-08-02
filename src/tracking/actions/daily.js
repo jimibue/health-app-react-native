@@ -46,6 +46,33 @@ export const thunkDemo = () => {
 }
 
 export const thunkGetDemo = () => {
+    console.log(' thunk get demo called')
+    return (dispatch, getState) => {
+        console.log(' thunk get demo dispatch called')
+        dispatch(uiStartLoading())
+        dispatch(getToken())            
+            .then( token => {
+                console.log('token')
+                console.log(token)
+                fetch(`https://health-tracker-83b16.firebaseio.com/test.json?auth=${token}`,{
+                    method: "GET",
+                })
+                //catch will only catch failed network requests.  It will not catch 4xx ann 5xx errs
+                .catch( err => {
+                    console.log(err)
+                    dispatch(uiStopLoading())
+                })
+                .then( res =>res.json())
+                .then( parsedRes =>{
+                    console.log(parsedRes)
+                    dispatch(uiStopLoading())
+                })
+            })
+            .catch( () => alert('no valid token found'))
+    }
+}
+
+export const thunkGetDemo1 = () => {
     console.log('here')
     return (dispatch, getState) => {
         dispatch(uiStartLoading())

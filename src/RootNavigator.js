@@ -1,4 +1,4 @@
-import { createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
 import trackingNavigator from './tracking/trackingNavigator';
 import insightsNavigator from './insights/insightsNavigator';
@@ -7,6 +7,7 @@ import Dummy from './Dummy';
 import Drawer from './Drawer';
 
 import Login from './login/Login';
+import Passcode from './login/Passcode';
 
 const App = createBottomTabNavigator(
     {
@@ -17,9 +18,18 @@ const App = createBottomTabNavigator(
         Drawer: Drawer
     }
 )
+const Pass = createStackNavigator ({
+    Passcode: Passcode,
+    Appz: App
+},
+{
+    initialRouteName:'Passcode'
+}
+)
 
 const LoginStack = createSwitchNavigator({
     Login: Login,
+    Passcode: Passcode,
     App: App
 },{
     initialRouteName:'Login'

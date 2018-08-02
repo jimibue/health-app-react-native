@@ -1,7 +1,9 @@
 const intialState = {
     token: null,
     isAuthed: false,
-
+    passcode: null,
+    isPasscodeSet: false,
+    ecpc:null,
 }
 
 const reducer = ( state = intialState, action ) => {
@@ -15,7 +17,29 @@ const reducer = ( state = intialState, action ) => {
             ...state,
             // encypted here?
             token: action.data,
+           
+        }
+        case 'SET_AUTH_TO_TRUE' :
+        return  {
+            ...state,
             isAuthed:true
+        }
+        case 'AUTH_SET_PASSCODE': {
+            return {
+                ...state,
+                isPasscodeSet: true,
+                passcode: action.data
+            }
+
+        }
+        case 'RESET' : {
+            return {
+                ...state,
+                isPasscodeSet: false,
+                passcode: null,
+                isAuthed: false,
+                token: null
+            }
         }
         default:
             return state    

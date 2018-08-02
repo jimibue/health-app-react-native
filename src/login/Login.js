@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, Button, ActivityIndicator } from 'react-native';
 
-import { authSignup, signIn } from '../login/actions/auth';
+import { authSignup, signIn, authAutoSignIn } from '../login/actions/auth';
 
 import { connect } from 'react-redux';
 
@@ -9,10 +9,13 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        email:'',
-        password:'',
+        email:'test@email.com',
+        password:'123456',
         authMode:'Sign In'
     };
+  }
+  componentDidMount = () =>{
+    this.props.authAutoSignIn()
   }
   loginPressed  = () =>{
     console.log('here')
@@ -39,8 +42,8 @@ signInPressed  = () =>{
 
   render() {
      const {email, password} = this.state
-     //not the way to do this
-     if (this.props.isAuthed){ this.props.navigation.navigate('App')}
+     //not the way to do this, but works for now
+     if (this.props.isAuthed){ this.props.navigation.navigate('Passcode')}
      
 
     return (
@@ -65,7 +68,8 @@ signInPressed  = () =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
         authSignup: (authData, authMode)=> dispatch(authSignup(authData, authMode)),
-        signIn: (authData, authMode)=> dispatch(signIn(authData, authMode))
+        signIn: (authData, authMode)=> dispatch(signIn(authData, authMode)),
+        authAutoSignIn: () => dispatch(authAutoSignIn())
     }
 }
 
